@@ -22,7 +22,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona';
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT * FROM divisions WHERE country = 'Scotland';
 
 ```
 
