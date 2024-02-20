@@ -30,8 +30,8 @@ SELECT * FROM divisions WHERE country = 'Scotland';
 
 ```sql
 <!-- Copy solution here -->
-
-
+SELECT code FROM divisions WHERE name = 'Bundesliga';
+SELECT COUNT(*) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');
 ```
 
 5)  Find the teams which include the word "City" in their name. HINT: Not every team has been entered into the database with their full name, eg. `Norwich City` are listed as `Norwich`. If your query is correct it should return four teams.
