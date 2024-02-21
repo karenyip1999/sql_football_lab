@@ -73,17 +73,20 @@ SELECT COUNT(*) FROM matches WHERE division_code = 'N1' AND ftr = 'D' AND season
 9) Select the matches played in the Premier League in order of total goals scored (`fthg` + `ftag`) from highest to lowest. When two matches have the same total the match with more home goals (`fthg`) should come first. 
 
 ```sql
-<!-- Copy solution here -->
-
-
+<! -- Added from lab review
+SELECT * FROM matches WHERE division_code = 'E0' ORDER BY (fthg + ftag) DESC, fthg DESC;
+-- Limits to Premier League using division_code = 'E0'
+-- Highest home goals come first with fthg DESC
 ```
 
 10) Find the name of the division in which the most goals were scored in a single season and the year in which it happened.
 
 ```sql
-<!-- Copy solution here -->
-
-
+<!-- Added from lab review
+SELECT division_code, season, SUM(fthg + ftag) AS total_goals FROM matches GROUP BY division_code, season ORDER BY total_goals DESC LIMIT 1;
+-- AS is aliasing 
+-- GROUP BY groups by division_code and sub divides them into seasons
+-- ORDER BY orders by total goals, puts it in descending order and limits it to 1 result
 ```
 
 ### Useful Resources
